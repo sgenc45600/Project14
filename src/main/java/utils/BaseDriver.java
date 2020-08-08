@@ -12,6 +12,7 @@ public class BaseDriver {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+
         }
         return driver;
     }
