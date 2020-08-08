@@ -47,6 +47,7 @@ public class ContactUsSteps {
     @When("^I select an \"([^\"]*)\" from Subject Heading$")
     public void i_select_an_from_Subject_Heading(String menuOption) throws InterruptedException {
         contactPage.selectList("id_contact", menuOption);
+
     }
 
     @When("^I select an \"([^\"]*)\" from Order Reference$")

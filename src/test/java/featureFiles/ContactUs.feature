@@ -15,6 +15,7 @@ Feature: Contact us
     And I select product from product input
     Then I enter "<Message>"
     Then I click Send button
+
     Examples:
       | MenuOption       | Order reference        | Message                            |
       | Customer Service | FUUIEDAMF - 08/01/2020 | Please check my order              |

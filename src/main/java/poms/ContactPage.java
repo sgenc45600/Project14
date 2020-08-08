@@ -62,13 +62,15 @@ public class ContactPage extends ParentClass {
         Select statusDropdown = new Select(myElement);
         statusDropdown.selectByVisibleText(menuOption);
 
+
+
     }
 
     public void findElementAndSendKeysFunction(String elementName, String Keys) {
         switch (elementName) {
             case "message":
                 myElement = message;
-                break;
+                  break;
         }
         sendKeysFunction(myElement, Keys);
     }
