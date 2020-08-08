@@ -19,7 +19,7 @@ public class ContactPage extends ParentClass {
     @FindBy(id = "id_contact")
     private WebElement idContact;
 
-    @FindBy(id = "id_order")
+    @FindBy(css = "[name=id_order]")
     private WebElement idOrder;
 
     @FindBy(id = "message")
@@ -28,6 +28,12 @@ public class ContactPage extends ParentClass {
     @FindBy(id = "submitMessage")
     private WebElement submitMessage;
 
+    @FindBy(css = "select[style='display: inline-block;']")
+    private WebElement idProduct;
+
+    @FindBy(css ="a[class='logout']")
+    private WebElement signOut;
+
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -35,12 +41,9 @@ public class ContactPage extends ParentClass {
             case "submitMessage":
                 myElement = submitMessage;
                 break;
-//        case "SubmitButton":
-//            myElement = submitButton;
-//            break;
-//        case "contacLink":
-//            myElement = contacLink;
-//            break;
+            case "signOut":
+                myElement = signOut;
+                break;
         }
         clickFunction(myElement);
     }
@@ -55,14 +58,16 @@ public class ContactPage extends ParentClass {
                 myElement = idOrder;
                 break;
 
+            case "id_product":
+                myElement = idProduct;
+                break;
+
         }
    //     waitUntilClickable(myElement);
     //    waitUntilVisible(myElement);
         Thread.sleep(3000);
         Select statusDropdown = new Select(myElement);
         statusDropdown.selectByVisibleText(menuOption);
-
-
 
     }
 

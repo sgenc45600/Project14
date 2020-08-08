@@ -1,5 +1,7 @@
 package steps;
 
+import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
 import poms.ContactPage;
@@ -15,6 +17,7 @@ public class ContactUsSteps {
 
     @Given("^I navigate to Website$")
     public void i_navigate_to_Website() throws Exception {
+        driver = BaseDriver.getDriver();
         driver.get("http://automationpractice.com/");
         driver.manage().window().maximize();
     }
@@ -55,9 +58,9 @@ public class ContactUsSteps {
         contactPage.selectList("id_order", orderReference);
     }
 
-    @When("^I select product from product input$")
-    public void i_select_product_from_product_input() {
-
+    @And("^I select \"([^\"]*)\" from product input$")
+    public void iSelectFromProductInput(String product) throws InterruptedException {
+        contactPage.selectList("id_product", product);
     }
 
     @Then("^I enter \"([^\"]*)\"$")
@@ -68,7 +71,19 @@ public class ContactUsSteps {
     @Then("^I click Send button$")
     public void i_click_Send_button() {
         contactPage.findElementAndClickFunction("submitMessage");
+
     }
 
+//    @After
+//    public void after() {
+//
+//        BaseDriver.getDriver().quit();
+//
+//    }
 
+    @Then("^Sign out$")
+    public void signOut() {
+        contactPage.findElementAndClickFunction("signOut");
+
+    }
 }
