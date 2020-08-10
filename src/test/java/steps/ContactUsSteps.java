@@ -86,4 +86,5 @@ public class ContactUsSteps {
         contactPage.findElementAndClickFunction("signOut");
 
     }
+
 }

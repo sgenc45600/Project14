@@ -49,6 +49,9 @@ public class MainPage extends ParentClass {
             case "contacLink":
                 myElement = contacLink;
                 break;
+            case "specials":
+                myElement = specials;
+                break;
 
         }
         clickFunction(myElement);

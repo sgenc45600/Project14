@@ -61,6 +61,7 @@ public class ContactPage extends ParentClass {
                 myElement = idProduct;
                 break;
 
+
         }
 
     //    Thread.sleep(3000);
