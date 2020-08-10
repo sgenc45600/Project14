@@ -1,6 +1,5 @@
 package poms;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,9 +62,8 @@ public class ContactPage extends ParentClass {
                 break;
 
         }
-   //     waitUntilClickable(myElement);
-    //    waitUntilVisible(myElement);
-        Thread.sleep(3000);
+
+    //    Thread.sleep(3000);
         Select statusDropdown = new Select(myElement);
         statusDropdown.selectByVisibleText(menuOption);
 

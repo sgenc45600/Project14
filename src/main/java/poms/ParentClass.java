@@ -15,8 +15,6 @@ public class ParentClass {
     public ParentClass() {
         driver = BaseDriver.getDriver();
         this.wait = new WebDriverWait(driver, 10);
-
-//           jlkl
     }
 
     public void clickFunction(WebElement element) {
@@ -24,19 +22,18 @@ public class ParentClass {
         element.click();
     }
 
-    public void waitUntilClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
 
-    }
     public void sendKeysFunction(WebElement element , String value){
-
         waitUntilVisible(element);
         element.clear();
         element.sendKeys(value);
-
     }
-    public void waitUntilVisible(WebElement elementToWait){
 
+    public void waitUntilClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void waitUntilVisible(WebElement elementToWait){
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
     }
 }

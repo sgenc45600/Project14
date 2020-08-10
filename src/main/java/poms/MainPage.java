@@ -28,7 +28,9 @@ public class MainPage extends ParentClass {
     @FindBy(id = "contact-link")
     private WebElement contacLink;
     //public By deneme = By.id("contact-link");
-    //jjjh
+
+    @FindBy(css = "a[title='Specials']")
+    private WebElement specials;
 
     WebElement myElement;
     WebDriverWait wait;
