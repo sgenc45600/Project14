@@ -22,34 +22,23 @@ public class OrderHistoryPage extends ParentClass {
     @FindBy(css = "a[title=Orders]")
     private WebElement orderHistoryButton;
 
-    @FindBy(css = "a[class=color-myaccount]")
-    private WebElement OrderReferenceList;
-
     public By OrderReferenceListLocator = By.cssSelector("a[class=color-myaccount]");
-
-    @FindBy(css = "td[class=history_price]")
-    private WebElement OrderPriceList;
-
     public By OrderPriceListLocator = By.cssSelector("td[class=history_price]");
 
 
     public void findElementAndClickFunction(String elementName) {
 
         switch (elementName) {
-
             case "OrderHistoryButton":
                 myElement = orderHistoryButton;
                 break;
-
-
         }
         clickFunction(myElement);
     }
 
-    public String getTextFromList(String referencetext, int index)  {
+    public String getTextFromList(String elementName, int index)  {
 
-        switch (referencetext) {
-
+        switch (elementName) {
             case "OrderReferenceList":
                 a = OrderReferenceListLocator;
                 break;
@@ -57,8 +46,7 @@ public class OrderHistoryPage extends ParentClass {
                 a = OrderPriceListLocator;
                 break;
         }
-
-        List<WebElement> referenceNames = myElement.findElements(a);
+        List<WebElement> referenceNames = driver.findElements(a);
         return referenceNames.get(index).getText();
     }
 }

@@ -33,11 +33,10 @@ public class OrdersHistorySteps {
         List<List<String>> strings = table.asLists(String.class);
         for (int i = 0; i < strings.size(); i++) {
             for (int j = 0; j < strings.get(i).size(); j++) {
-               // System.out.println(strings.get(i).get(j));
-                System.out.println(orderPage.getTextFromList("OrderReferenceList",i));
-//                List<WebElement> elementList = driver.findElements(orderPage.OrderReferenceListLocator);
-//                System.out.println(elementList.get(i).getText());
-
+                if (strings.get(i).get(0).equals(orderPage.getTextFromList("OrderReferenceList", i)))
+                    Assert.assertEquals(strings.get(i).get(1),orderPage.getTextFromList("OrderPriceList",i));
+                //I get order number from web page and compare it with DataTable, if it is true. than i get order price
+                //from web page and compare it with data table with Asser
             }
 
         }
