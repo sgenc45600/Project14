@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,5 +44,6 @@ public class SpecialsSteps {
         specialsPage.checkThePrices(specialsPage.oldPrices,specialsPage.currentPrices,specialsPage.discountPercent);
 
             }
+
 
 }
