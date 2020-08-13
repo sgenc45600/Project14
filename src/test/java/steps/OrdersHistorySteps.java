@@ -14,12 +14,7 @@ public class OrdersHistorySteps {
     ContactPage contactPage = new ContactPage();
     ParentClass parentClass = new ParentClass();
 
-    @Given("^I click on Orders History  button$")
-    public void iClickOnOrdersHistoryButton() {
-
-
-
+    @Given("^I click on Order History$")
+    public void iClickOnOrderHistory() {
     }
-
-
 }

@@ -7,4 +7,4 @@ Feature: Try the order histoy
     When I click on sign in button
     Then I enter email: "atlanta@gmail.com" I enter password: "Asdf4321-"
     Then I click submit button
-    Given I click on contact us button
+    Given I click on Order History
