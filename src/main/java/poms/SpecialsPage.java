@@ -6,10 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import utils.BaseDriver;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class SpecialsPage extends ParentClass {
@@ -41,29 +38,11 @@ public class SpecialsPage extends ParentClass {
     @FindBy(css = "select[id='selectProductSort']")
     private WebElement sortByButton;
 
-
-
     public By productList=By.xpath("//div[@class='product-container']");
-    public By currentPrices=By.cssSelector("li>div>div>div> span[itemprop=\"price\"]");
-    public By oldPrices=By.cssSelector("li>div>div>div> span[class=\"old-price product-price\"]");
-    public By discountPercent=By.cssSelector("li>div>div>div> span[class=\"price-percent-reduction\"]");
+    public By currentPrices=By.cssSelector("li>div>div>div>span[itemprop='price']");
+    public By oldPrices=By.cssSelector("li>div>div>div>span[class='old-price product-price']");
+    public By discountPercent=By.cssSelector("li>div>div>div>span[class='price-percent-reduction']");
 
-
-    public void findElementAndClickFunction(String elementName) {
-
-        switch (elementName) {
-//            case "SigInButton":
-//                myElement = signInButton;
-//                break;
-//            case "SubmitButton":
-//                myElement = submitButton;
-//                break;
-//            case "contacLink":
-//                myElement = contacLink;
-//                break;
-        }
-        clickFunction(myElement);
-    }
 
     public void selectList(String elementName, String menuOption) {
 
@@ -71,18 +50,14 @@ public class SpecialsPage extends ParentClass {
             case "sortByButton":
                 myElement = sortByButton;
                 break;
-
         }
         Select statusDropdown = new Select(myElement);
         statusDropdown.selectByVisibleText(menuOption);
-
-
     }
 
     public int getNumberOfItems() {
         List<WebElement> list=BaseDriver.getDriver().findElements(productList);
-
-        System.out.println(list.size());
+        System.out.println("Number of items: "+list.size());
         return list.size();
     }
     public void checkThePrices(By oldPrices, By currentPrices, By discountPercent){
@@ -98,10 +73,9 @@ public class SpecialsPage extends ParentClass {
 
             System.out.println("old price:"+oldPrice);
             System.out.println("current price:"+currentPrice);
-            System.out.println("percent:"+discountPercents);
+            System.out.println("percent:"+discountPercents+"\n");
+
             Assert.assertEquals(currentPrice,oldPrice-oldPrice*(discountPercents/100),0.1);
-
-
         }
 
 

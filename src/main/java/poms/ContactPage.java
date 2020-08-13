@@ -62,10 +62,7 @@ public class ContactPage extends ParentClass {
             case "id_product":
                 myElement = idProduct;
                 break;
-
-
         }
-
     //    Thread.sleep(3000);
         Select statusDropdown = new Select(myElement);
         statusDropdown.selectByVisibleText(menuOption);
