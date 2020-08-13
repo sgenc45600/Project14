@@ -6,4 +6,3 @@ Feature: OrdersHistory
     Then I click submit button
     Given I click on Orders History  button
 
-#    Then Sign out
