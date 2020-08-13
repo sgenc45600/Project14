@@ -21,6 +21,7 @@ public class ParentClass {
     public void clickFunction(WebElement element) {
         waitUntilClickable(element);
         element.click();
+
     }
 
 

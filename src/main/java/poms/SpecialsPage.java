@@ -49,21 +49,7 @@ public class SpecialsPage extends ParentClass {
     public By discountPercent=By.cssSelector("li>div>div>div> span[class=\"price-percent-reduction\"]");
 
 
-    public void findElementAndClickFunction(String elementName) {
 
-        switch (elementName) {
-//            case "SigInButton":
-//                myElement = signInButton;
-//                break;
-//            case "SubmitButton":
-//                myElement = submitButton;
-//                break;
-//            case "contacLink":
-//                myElement = contacLink;
-//                break;
-        }
-        clickFunction(myElement);
-    }
 
     public void selectList(String elementName, String menuOption) {
 

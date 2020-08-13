@@ -67,6 +67,7 @@ public class MainPage extends ParentClass {
                 break;
         }
         sendKeysFunction(myElement, Keys);
+
     }
 
 
