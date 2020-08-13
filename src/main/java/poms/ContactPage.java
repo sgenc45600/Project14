@@ -33,6 +33,8 @@ public class ContactPage extends ParentClass {
     @FindBy(css ="a[class='logout']")
     private WebElement signOut;
 
+    @FindBy(xpath = "//p[text()='Your message has been successfully sent to our team.']")
+    private WebElement successfullyMessage;
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -77,6 +79,18 @@ public class ContactPage extends ParentClass {
                   break;
         }
         sendKeysFunction(myElement, Keys);
+    }
+
+    public void findElementAndVerifyElementContainsText(String elementName, String text){
+
+        switch(elementName){
+            case "successfullyMessage":
+                myElement=successfullyMessage;
+                break;
+
+        }
+
+        ElementContainsText(myElement,text);
     }
 
 }

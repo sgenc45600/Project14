@@ -13,6 +13,7 @@ Feature: Contact us
     And I select "<Product>" from product input
     Then I enter "<Message>"
     Then I click Send button
+    Then I verify "Your message has been successfully sent to our team." text
     Then Sign out
 
     Examples:

@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import poms.ContactPage;
 import poms.MainPage;
 import poms.ParentClass;
@@ -87,4 +88,9 @@ public class ContactUsSteps {
 
     }
 
+    @Then("^I verify \"([^\"]*)\" text$")
+    public void iVerifyText(String successfullyMessage) {
+        // Write code here that turns the phrase above into concrete actions
+        contactPage.findElementAndVerifyElementContainsText("successfullyMessage",successfullyMessage);
+    }
 }
